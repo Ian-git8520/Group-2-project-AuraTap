@@ -14,14 +14,14 @@ db = SQLAlchemy(metadata=metadata)
 class Customer(db.Model, SerializerMixin):
     __tablename__ = 'customers'
     
-    # Serialization rules
+    
     serialize_rules = ('-orders.customer',)
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # Relationships
+    
     orders = db.relationship('Order', back_populates='customer', cascade='all, delete-orphan')
     
     def __repr__(self):
@@ -31,7 +31,7 @@ class Customer(db.Model, SerializerMixin):
 class Staff(db.Model, SerializerMixin):
     __tablename__ = 'staff'
     
-    # Serialization rules
+    
     serialize_rules = ('-orders.staff',)
     
     id = db.Column(db.Integer, primary_key=True)
@@ -39,7 +39,7 @@ class Staff(db.Model, SerializerMixin):
     role = db.Column(db.String(50), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # Relationships
+    
     orders = db.relationship('Order', back_populates='staff', cascade='all, delete-orphan')
     
     def __repr__(self):
@@ -49,14 +49,14 @@ class Staff(db.Model, SerializerMixin):
 class Table(db.Model, SerializerMixin):
     __tablename__ = 'tables'
     
-    # Serialization rules
+    
     serialize_rules = ('-orders.table',)
     
     id = db.Column(db.Integer, primary_key=True)
     status = db.Column(db.String(20), default='available')  # available, occupied, reserved
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # Relationships
+   
     orders = db.relationship('Order', back_populates='table', cascade='all, delete-orphan')
     
     @validates('status')
@@ -73,7 +73,7 @@ class Table(db.Model, SerializerMixin):
 class Menu(db.Model, SerializerMixin):
     __tablename__ = 'menu'
     
-    # Serialization rules
+   
     serialize_rules = ('-order_items.meal',)
     
     id = db.Column(db.Integer, primary_key=True)
@@ -82,7 +82,7 @@ class Menu(db.Model, SerializerMixin):
     price = db.Column(db.Numeric(10, 2), nullable=False)
     description = db.Column(db.Text)
     
-    # Relationships
+    
     order_items = db.relationship('OrderItem', back_populates='meal', cascade='all, delete-orphan')
     
     @validates('price')
@@ -98,7 +98,7 @@ class Menu(db.Model, SerializerMixin):
 class Order(db.Model, SerializerMixin):
     __tablename__ = 'orders'
     
-    # Serialization rules
+    
     serialize_rules = ('-customer.orders', '-staff.orders', '-table.orders', 
                       '-order_items.order', '-payments.order')
     
@@ -109,7 +109,7 @@ class Order(db.Model, SerializerMixin):
     status = db.Column(db.String(20), default='pending')  # pending, preparing, served, completed, cancelled
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # Relationships
+    
     customer = db.relationship('Customer', back_populates='orders')
     staff = db.relationship('Staff', back_populates='orders')
     table = db.relationship('Table', back_populates='orders')
@@ -130,7 +130,7 @@ class Order(db.Model, SerializerMixin):
 class OrderItem(db.Model, SerializerMixin):
     __tablename__ = 'order_items'
     
-    # Serialization rules
+   
     serialize_rules = ('-order.order_items', '-meal.order_items')
     
     id = db.Column(db.Integer, primary_key=True)
@@ -138,7 +138,7 @@ class OrderItem(db.Model, SerializerMixin):
     meal_id = db.Column(db.Integer, db.ForeignKey('menu.id'), nullable=False)
     quantity = db.Column(db.Integer, nullable=False, default=1)
     
-    # Relationships
+   
     order = db.relationship('Order', back_populates='order_items')
     meal = db.relationship('Menu', back_populates='order_items')
     
@@ -155,7 +155,7 @@ class OrderItem(db.Model, SerializerMixin):
 class Payment(db.Model, SerializerMixin):
     __tablename__ = 'payments'
     
-    # Serialization rules
+    
     serialize_rules = ('-order.payments', '-finances.payment')
     
     id = db.Column(db.Integer, primary_key=True)
@@ -165,7 +165,7 @@ class Payment(db.Model, SerializerMixin):
     status = db.Column(db.String(20), default='pending')  # pending, completed, failed, refunded
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # Relationships
+   
     order = db.relationship('Order', back_populates='payments')
     finances = db.relationship('Finance', back_populates='payment', cascade='all, delete-orphan')
     
@@ -196,14 +196,14 @@ class Payment(db.Model, SerializerMixin):
 class Finance(db.Model, SerializerMixin):
     __tablename__ = 'finances'
     
-    # Serialization rules
+    
     serialize_rules = ('-payment.finances',)
     
     id = db.Column(db.Integer, primary_key=True)
     payment_id = db.Column(db.Integer, db.ForeignKey('payments.id'), nullable=False)
     total_income = db.Column(db.Numeric(10, 2), nullable=False)
     
-    # Relationships
+    
     payment = db.relationship('Payment', back_populates='finances')
     
     @validates('total_income')
