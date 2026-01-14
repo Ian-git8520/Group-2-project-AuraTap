@@ -29,6 +29,7 @@ def get_customers():
     return jsonify([c.to_dict() for c in customers])
 
 
+
 @app.route("/customers", methods=["POST"])
 def create_customer():
     data = request.get_json()
@@ -46,6 +47,8 @@ def create_customer():
 def get_staff():
     staff = Staff.query.all()
     return jsonify([s.to_dict() for s in staff])
+
+
 
 
 @app.route("/staff", methods=["POST"])
@@ -68,6 +71,8 @@ def get_tables():
     return jsonify([t.to_dict() for t in tables])
 
 
+
+
 @app.route("/tables/<int:id>", methods=["PATCH"])
 def update_table_status(id):
     table = Table.query.get_or_404(id)
@@ -77,10 +82,12 @@ def update_table_status(id):
 
 
 
+
 @app.route("/menu", methods=["GET"])
 def get_menu():
     meals = Menu.query.all()
     return jsonify([m.to_dict() for m in meals])
+
 
 
 @app.route("/menu", methods=["POST"])

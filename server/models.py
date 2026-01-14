@@ -108,7 +108,7 @@ class Order(db.Model, SerializerMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'), nullable=False)
-    staff_id = db.Column(db.Integer, db.ForeignKey('staff.id'), nullable=False)
+    staff_id = db.Column(db.Integer, db.ForeignKey('staff.id'), nullable=True)
     table_id = db.Column(db.Integer, db.ForeignKey('tables.id'), nullable=False)
     status = db.Column(db.String(20), default='pending')  # pending, preparing, served, completed, cancelled
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
@@ -175,7 +175,7 @@ class Payment(db.Model, SerializerMixin):
     
     
     order = db.relationship('Order', back_populates='payments')
-    finances = db.relationship('Finance', back_populates='payment', cascade='all, delete-orphan')
+    
     
     @validates('total_amount')
     def validate_total_amount(self, key, total_amount):
