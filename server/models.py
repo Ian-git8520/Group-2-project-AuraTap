@@ -32,6 +32,7 @@ class Staff(db.Model, SerializerMixin):
     __tablename__ = 'staff'
     
     
+    
     serialize_rules = ('-orders.staff',)
     
     id = db.Column(db.Integer, primary_key=True)
@@ -156,6 +157,7 @@ class Payment(db.Model, SerializerMixin):
     __tablename__ = 'payments'
     
     
+    
     serialize_rules = ('-order.payments', '-finances.payment')
     
     id = db.Column(db.Integer, primary_key=True)
@@ -211,6 +213,7 @@ class Finance(db.Model, SerializerMixin):
         if total_income < 0:
             raise ValueError("Total income must be positive")
         return total_income
+
     
     def __repr__(self):
         return f'<Finance {self.id}: Payment {self.payment_id} - Income ${self.total_income}>'
