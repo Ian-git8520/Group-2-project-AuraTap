@@ -89,6 +89,7 @@ class MenuListResource(Resource):
     def get(self):
         return [m.to_dict() for m in Menu.query.all()], 200
 
+
     def post(self):
         args = menu_parser.parse_args()
         meal = Menu(
@@ -96,6 +97,7 @@ class MenuListResource(Resource):
             price=args["price"],
             image_url=args.get("image_url"),
             description=args.get("description")
+
         )
         db.session.add(meal)
         db.session.commit()
