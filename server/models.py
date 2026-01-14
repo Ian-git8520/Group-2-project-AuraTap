@@ -195,25 +195,7 @@ class Payment(db.Model, SerializerMixin):
         return f'<Payment {self.id}: Order {self.order_id} - ${self.total_amount} - {self.status}>'
 
 
-class Finance(db.Model, SerializerMixin):
-    __tablename__ = 'finances'
-    
-   
-    serialize_rules = ('-payment.finances',)
-    
-    id = db.Column(db.Integer, primary_key=True)
-    payment_id = db.Column(db.Integer, db.ForeignKey('payments.id'), nullable=False)
-    total_income = db.Column(db.Numeric(10, 2), nullable=False)
-    
-   
-    payment = db.relationship('Payment', back_populates='finances')
-    
-    @validates('total_income')
-    def validate_total_income(self, key, total_income):
-        if total_income < 0:
-            raise ValueError("Total income must be positive")
-        return total_income
+
 
     
-    def __repr__(self):
-        return f'<Finance {self.id}: Payment {self.payment_id} - Income ${self.total_income}>'
+    
