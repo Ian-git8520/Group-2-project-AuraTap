@@ -47,6 +47,7 @@ class Staff(db.Model, SerializerMixin):
         return f'<Staff {self.id}: {self.staff_name} - {self.role}>'
 
 
+
 class Table(db.Model, SerializerMixin):
     __tablename__ = 'tables'
     
@@ -69,6 +70,7 @@ class Table(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'<Table {self.id}: {self.status}>'
+
 
 
 class Menu(db.Model, SerializerMixin):
@@ -94,6 +96,7 @@ class Menu(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'<Menu {self.id}: {self.meal_name} - ${self.price}>'
+
 
 
 class Order(db.Model, SerializerMixin):
@@ -128,6 +131,7 @@ class Order(db.Model, SerializerMixin):
         return f'<Order {self.id}: Table {self.table_id} - {self.status}>'
 
 
+
 class OrderItem(db.Model, SerializerMixin):
     __tablename__ = 'order_items'
     
@@ -151,6 +155,8 @@ class OrderItem(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'<OrderItem {self.id}: Order {self.order_id} - Meal {self.meal_id} x{self.quantity}>'
+
+
 
 
 class Payment(db.Model, SerializerMixin):
@@ -193,8 +199,6 @@ class Payment(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'<Payment {self.id}: Order {self.order_id} - ${self.total_amount} - {self.status}>'
-
-
 
 
     

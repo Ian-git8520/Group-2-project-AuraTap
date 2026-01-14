@@ -104,7 +104,7 @@ def create_order():
 
     order = Order(
         customer_id=data["customer_id"],
-        staff_id=data.get("staff_id"),  # opti
+        staff_id=data.get("staff_id"),  
         table_id=data["table_id"],
         status="pending",
         created_at=datetime.utcnow()
