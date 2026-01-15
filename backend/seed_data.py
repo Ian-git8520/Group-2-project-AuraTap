@@ -2,11 +2,11 @@ from app import app, db, MenuItem, Table, Staff
 
 def seed_database():
     with app.app_context():
-        # Clear existing data
+
         db.drop_all()
         db.create_all()
         
-        # Create tables
+    
         tables = [
             Table(table_number=1, capacity=2),
             Table(table_number=2, capacity=4),
@@ -15,8 +15,9 @@ def seed_database():
             Table(table_number=5, capacity=2),
         ]
         db.session.add_all(tables)
+
         
-        # Create menu items
+    
         menu_items = [
             MenuItem(
                 name="Grilled Salmon",
