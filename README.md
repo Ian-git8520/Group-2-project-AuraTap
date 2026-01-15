@@ -12,26 +12,6 @@ A full-stack restaurant ordering application built with React and Flask, featuri
 - **Feedback System**: Rate meals and leave comments after order completion
 - **Responsive Design**: Works on desktop and mobile devices
 
-## Project Structure
-
-```
-restaurant-ordering-system/
-├── backend/                 # Flask API
-│   ├── app.py              # Main Flask application with models and routes
-│   ├── seed_data.py        # Database initialization script
-│   ├── requirements.txt     # Python dependencies
-│   └── restaurant.db       # SQLite database (auto-generated)
-│
-└── frontend/               # React application
-    ├── public/
-    ├── src/
-    │   ├── pages/          # Page components
-    │   ├── components/     # Reusable components
-    │   ├── App.js          # Main app component
-    │   └── index.js        # React entry point
-    ├── package.json        # Node dependencies
-    └── .env               # Environment configuration
-```
 
 ## Database Schema
 
@@ -61,21 +41,6 @@ restaurant-ordering-system/
 **Staff** (Standalone)
 - id, name, role, email, created_at
 
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Welcome message |
-| GET, POST | `/customers` | List/Create customers |
-| GET, POST | `/staff` | List/Create staff |
-| GET, POST | `/tables` | List/Create tables |
-| GET, PUT | `/tables/<id>` | Get/Update specific table |
-| GET, POST | `/menu` | List/Create menu items |
-| GET, POST | `/orders` | List/Create orders |
-| GET, PUT | `/orders/<id>` | Get/Update specific order |
-| GET | `/payments` | List payments |
-| GET, POST, PUT | `/payments/<order_id>` | Payment operations |
-| POST | `/feedbacks` | Submit feedback |
 
 ## Setup Instructions
 
