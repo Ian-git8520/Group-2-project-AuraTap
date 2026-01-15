@@ -166,5 +166,3 @@ This project is created as a learning exercise for full-stack web development.
 - ABIUD      -RUTH
 - IAN        -ABDIRAHMAN
 - FAITH      -CASTRO
-
-12345

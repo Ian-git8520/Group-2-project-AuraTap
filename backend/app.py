@@ -6,15 +6,28 @@ from datetime import datetime
 from flask_migrate import Migrate
 from flask import send_from_directory
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///restaurant.db'
+
+# Configuration
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///restaurant.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
+app.config['DEBUG'] = os.getenv('FLASK_ENV', 'development') == 'development'
+
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 api = Api(app)
-CORS(app)
+CORS(app, origins=os.getenv('CORS_ORIGINS', '*').split(','))
 
 
+
+
+# models
 
 class Customer(db.Model):
     __tablename__ = 'customers'

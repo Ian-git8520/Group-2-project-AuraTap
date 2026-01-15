@@ -80,14 +80,19 @@ def seed_database():
         
         
         staff = [
-            Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
-            Staff(name="Jane Opondo", role="Chef", email="jane@restaurant.com"),
-            Staff(name="Ben O Teke", role="Manager", email="bob@restaurant.com"),
+            Staff(name="Jacob Jele", role="waiter", email="jacob@restaurant.com"),
+            Staff(name="Jane Opondo", role="chef", email="jane@restaurant.com"),
+            Staff(name="Ben O Teke", role="manager", email="bob@restaurant.com"),
+            Staff(name="Sarah Kim", role="waiter", email="sarah@restaurant.com"),
+            Staff(name="Mike Chen", role="cashier", email="mike@restaurant.com"),
         ]
         db.session.add_all(staff)
         
         db.session.commit()
-        print("Database seeded successfully!")
+        print("✓ Database seeded successfully!")
+        print(f"✓ Added {len(tables)} tables")
+        print(f"✓ Added {len(menu_items)} menu items")
+        print(f"✓ Added {len(staff)} staff members")
 
 if __name__ == '__main__':
     seed_database()
