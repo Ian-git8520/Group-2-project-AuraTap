@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask_migrate import Migrate
 from flask import send_from_directory
 import os
 
