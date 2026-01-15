@@ -42,3 +42,4 @@ MANIFEST
 # Environment
 .env
 .env.local
+logs/
