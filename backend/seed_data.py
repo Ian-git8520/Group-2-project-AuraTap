@@ -80,8 +80,8 @@ def seed_database():
         # Create staff
         staff = [
             Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
-            Staff(name="Jane Smith", role="Chef", email="jane@restaurant.com"),
-            Staff(name="Bob Manager", role="Manager", email="bob@restaurant.com"),
+            Staff(name="Jane Opondo", role="Chef", email="jane@restaurant.com"),
+            Staff(name="Ben O Teke", role="Manager", email="bob@restaurant.com"),
         ]
         db.session.add_all(staff)
         
