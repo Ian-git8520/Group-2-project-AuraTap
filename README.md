@@ -167,4 +167,80 @@ This project is created as a learning exercise for full-stack web development.
 - IAN        -ABDIRAHMAN
 - FAITH      -CASTRO
 
+## Usage
+
+1. **Start the app** - Navigate to the home page
+2. **Login** - Enter your name and select a table
+3. **Browse Menu** - Filter by category and view dishes
+4. **Add to Cart** - Select quantity and add items
+5. **View Cart** - Review items and adjust quantities
+6. **Payment** - Choose payment method and complete transaction
+7. **Track Order** - Monitor real-time order status
+8. **Leave Feedback** - Rate and comment on your experience
+
+## Validation Features
+
+- Username validation (2-50 characters, unique)
+- Phone number format validation for M-Pesa (must start with 254)
+- Card number validation (16 digits for card payments)
+- CVV validation (3 digits)
+- Comment length validation (max 500 characters)
+- Rating validation (1-5 stars)
+
+## Technologies Used
+
+### Backend
+- **Flask**: Web framework
+- **Flask-RESTful**: REST API extension
+- **Flask-SQLAlchemy**: ORM and database management
+- **Flask-CORS**: Cross-origin resource sharing
+- **SQLite**: Database
+
+### Frontend
+- **React**: UI library
+- **React Router**: Client-side routing
+- **Formik**: Form management
+- **Yup**: Form validation
+- **Axios**: HTTP client
+- **React Hot Toast**: Notifications
+- **React Icons**: Icon library
+- **CSS3**: Styling
+
+## Payment Methods
+
+### Mock Payment System
+All payment methods are simulated for demo purposes:
+- **M-Pesa**: Phone number (254XXXXXXXXX)
+- **Card**: 16-digit card number with CVV
+- **Wallet**: Direct debit
+- **Cash**: Pay at counter
+
+## Future Enhancements
+
+- Real payment gateway integration (M-Pesa API, Stripe)
+- Admin dashboard for staff
+- Order history and analytics
+- Notification system (SMS/Email)
+- User authentication and accounts
+- Menu management interface
+- Kitchen management system
+- Receipt printing
+- Loyalty rewards program
+
+## Troubleshooting
+
+**CORS errors:** Ensure Flask is running on port 5000
+**Database errors:** Delete `restaurant.db` and run `seed_data.py` again
+**API errors:** Check that backend server is running
+**Port conflicts:** Change the port in `app.py` or frontend env variables
+
+## License
+
+This project is created as a learning exercise for full-stack web development.
+
+## OWNERS
+- ABIUD      -RUTH
+- IAN        -ABDIRAHMAN
+- FAITH      -CASTRO
+
 12345
