@@ -26,6 +26,9 @@ CORS(app, origins=os.getenv('CORS_ORIGINS', '*').split(','))
 
 
 
+
+# models
+
 class Customer(db.Model):
     __tablename__ = 'customers'
     id = db.Column(db.Integer, primary_key=True)
