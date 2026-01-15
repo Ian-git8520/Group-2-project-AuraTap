@@ -161,3 +161,8 @@ All payment methods are simulated for demo purposes:
 ## License
 
 This project is created as a learning exercise for full-stack web development.
+
+## OWNERS
+- ABIUD      -RUTH
+- IAN        -ABDIRAHMAN
+- FAITH      -CASTRO
