@@ -1,4 +1,4 @@
-# Restaurant Ordering System
+# AURATAP Restaurant Ordering System
 
 A full-stack restaurant ordering application built with React and Flask, featuring menu browsing, order management, payments, and customer feedback.
 
