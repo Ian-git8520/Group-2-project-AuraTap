@@ -22,56 +22,56 @@ def seed_database():
                 name="Grilled Salmon",
                 description="Fresh Atlantic salmon with lemon butter sauce",
                 price=25.99,
-                image_url="/frontend/public/images/salmon-meal.jpg",
+                image_url="http://localhost:5000/images/salmon-meal.jpg",
                 category="Main Course"
             ),
             MenuItem(
                 name="Beef Steak",
                 description="Premium tenderloin steak cooked to perfection",
                 price=32.99,
-                image_url="/images/steak.jpg",
+                image_url="http://localhost:5000/images/beef-steak.jpg",
                 category="Main Course"
             ),
             MenuItem(
                 name="Pasta Carbonara",
                 description="Classic Italian pasta with creamy sauce",
                 price=15.99,
-                image_url="/images/pasta.jpg",
+                image_url="http://localhost:5000/images/pasta-Carbonara.jpg",
                 category="Main Course"
             ),
             MenuItem(
                 name="Caesar Salad",
                 description="Fresh romaine lettuce with Caesar dressing",
                 price=9.99,
-                image_url="/images/salad.jpg",
+                image_url="http://localhost:5000/images/caesar-salad.jpg",
                 category="Starter"
             ),
             MenuItem(
                 name="Margherita Pizza",
                 description="Traditional pizza with fresh mozzarella",
                 price=18.99,
-                image_url="/images/pizza.jpg",
+                image_url="http://localhost:5000/images/Margherita-pizza.jpg",
                 category="Main Course"
             ),
             MenuItem(
                 name="Chocolate Cake",
                 description="Decadent chocolate cake with ganache",
                 price=8.99,
-                image_url="/images/cake.jpg",
+                image_url="http://localhost:5000/images/chocolate-cake.jpg",
                 category="Dessert"
             ),
             MenuItem(
                 name="Fresh Orange Juice",
                 description="Freshly squeezed orange juice",
                 price=5.99,
-                image_url="/images/juice.jpg",
+                image_url="http://localhost:5000/images/Fresh-orange-juice.jpg",
                 category="Beverage"
             ),
             MenuItem(
                 name="Iced Coffee",
                 description="Cold brew coffee with ice",
                 price=4.99,
-                image_url="/images/coffee.jpg",
+                image_url="http://localhost:5000/images/Iced-coffee.jpg",
                 category="Beverage"
             ),
         ]

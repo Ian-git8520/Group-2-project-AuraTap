@@ -411,7 +411,7 @@ api.add_resource(FeedbackResource, "/feedbacks")
 
 @app.route('/images/<filename>')
 def get_image(filename):
-    return send_from_directory('image', filename)
+    return send_from_directory(os.path.join(os.path.dirname(__file__), 'images'), filename)
                                
 if __name__ == '__main__':
     with app.app_context():
