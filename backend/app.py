@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask_migrate import Migrate
 from flask import send_from_directory
 import os
 
@@ -13,7 +14,7 @@ db = SQLAlchemy(app)
 api = Api(app)
 CORS(app)
 
-# ============ MODELS ============
+
 
 class Customer(db.Model):
     __tablename__ = 'customers'
@@ -187,7 +188,6 @@ class Staff(db.Model):
             'created_at': self.created_at.isoformat()
         }
 
-# ============ API RESOURCES ============
 
 class HomeResource(Resource):
     def get(self):
@@ -394,7 +394,7 @@ class FeedbackResource(Resource):
         db.session.commit()
         return feedback.to_dict(), 201
 
-# ============ REGISTER API ROUTES ============
+
 
 api.add_resource(HomeResource, "/")
 api.add_resource(CustomerListResource, "/customers")

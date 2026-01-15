@@ -2,11 +2,11 @@ from app import app, db, MenuItem, Table, Staff
 
 def seed_database():
     with app.app_context():
-        # Clear existing data
+
         db.drop_all()
         db.create_all()
         
-        # Create tables
+    
         tables = [
             Table(table_number=1, capacity=2),
             Table(table_number=2, capacity=4),
@@ -15,8 +15,9 @@ def seed_database():
             Table(table_number=5, capacity=2),
         ]
         db.session.add_all(tables)
+
         
-        # Create menu items
+    
         menu_items = [
             MenuItem(
                 name="Grilled Salmon",
@@ -77,11 +78,11 @@ def seed_database():
         ]
         db.session.add_all(menu_items)
         
-        # Create staff
+        
         staff = [
-            Staff(name="John Doe", role="Waiter", email="john@restaurant.com"),
-            Staff(name="Jane Smith", role="Chef", email="jane@restaurant.com"),
-            Staff(name="Bob Manager", role="Manager", email="bob@restaurant.com"),
+            Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
+            Staff(name="Jane Opondo", role="Chef", email="jane@restaurant.com"),
+            Staff(name="Ben O Teke", role="Manager", email="bob@restaurant.com"),
         ]
         db.session.add_all(staff)
         

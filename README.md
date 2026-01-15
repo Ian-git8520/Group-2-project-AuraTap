@@ -54,7 +54,7 @@ A full-stack restaurant ordering application built with React and Flask, featuri
 2. **Create virtual environment:**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  
    ```
 
 3. **Install dependencies:**
@@ -161,3 +161,10 @@ All payment methods are simulated for demo purposes:
 ## License
 
 This project is created as a learning exercise for full-stack web development.
+
+## OWNERS
+- ABIUD      -RUTH
+- IAN        -ABDIRAHMAN
+- FAITH      -CASTRO
+
+12345

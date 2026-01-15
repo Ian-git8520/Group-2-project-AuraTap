@@ -1,0 +1,94 @@
+"""
+Constants used throughout AuraTap application
+"""
+
+# Order Status
+ORDER_STATUS_PENDING = 'pending'
+ORDER_STATUS_PREPARING = 'preparing'
+ORDER_STATUS_READY = 'ready'
+ORDER_STATUS_SERVED = 'served'
+
+ORDER_STATUSES = [
+    ORDER_STATUS_PENDING,
+    ORDER_STATUS_PREPARING,
+    ORDER_STATUS_READY,
+    ORDER_STATUS_SERVED
+]
+
+# Table Status
+TABLE_STATUS_AVAILABLE = 'available'
+TABLE_STATUS_OCCUPIED = 'occupied'
+
+TABLE_STATUSES = [
+    TABLE_STATUS_AVAILABLE,
+    TABLE_STATUS_OCCUPIED
+]
+
+# Payment Methods
+PAYMENT_METHOD_MPESA = 'mpesa'
+PAYMENT_METHOD_CARD = 'card'
+PAYMENT_METHOD_WALLET = 'wallet'
+PAYMENT_METHOD_CASH = 'cash'
+
+PAYMENT_METHODS = [
+    PAYMENT_METHOD_MPESA,
+    PAYMENT_METHOD_CARD,
+    PAYMENT_METHOD_WALLET,
+    PAYMENT_METHOD_CASH
+]
+
+# Payment Status
+PAYMENT_STATUS_PENDING = 'pending'
+PAYMENT_STATUS_COMPLETED = 'completed'
+PAYMENT_STATUS_FAILED = 'failed'
+
+PAYMENT_STATUSES = [
+    PAYMENT_STATUS_PENDING,
+    PAYMENT_STATUS_COMPLETED,
+    PAYMENT_STATUS_FAILED
+]
+
+# Menu Categories
+CATEGORY_APPETIZER = 'Appetizer'
+CATEGORY_MAIN_COURSE = 'Main Course'
+CATEGORY_DESSERT = 'Dessert'
+CATEGORY_BEVERAGE = 'Beverage'
+CATEGORY_SALAD = 'Salad'
+
+MENU_CATEGORIES = [
+    CATEGORY_APPETIZER,
+    CATEGORY_MAIN_COURSE,
+    CATEGORY_DESSERT,
+    CATEGORY_BEVERAGE,
+    CATEGORY_SALAD
+]
+
+# Staff Roles
+ROLE_MANAGER = 'manager'
+ROLE_WAITER = 'waiter'
+ROLE_CHEF = 'chef'
+ROLE_CASHIER = 'cashier'
+
+STAFF_ROLES = [
+    ROLE_MANAGER,
+    ROLE_WAITER,
+    ROLE_CHEF,
+    ROLE_CASHIER
+]
+
+# Ratings
+MIN_RATING = 1
+MAX_RATING = 5
+
+# Pagination
+DEFAULT_PAGE_SIZE = 20
+MAX_PAGE_SIZE = 100
+
+# API Response Messages
+MSG_SUCCESS = 'Operation completed successfully'
+MSG_CREATED = 'Resource created successfully'
+MSG_UPDATED = 'Resource updated successfully'
+MSG_DELETED = 'Resource deleted successfully'
+MSG_NOT_FOUND = 'Resource not found'
+MSG_INVALID_INPUT = 'Invalid input provided'
+MSG_DUPLICATE = 'Resource already exists'
