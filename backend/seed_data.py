@@ -80,11 +80,9 @@ def seed_database():
         
         
         staff = [
-            Staff(name="Jacob Jele", role="waiter", email="jacob@restaurant.com"),
-            Staff(name="Jane Opondo", role="chef", email="jane@restaurant.com"),
-            Staff(name="Ben O Teke", role="manager", email="bob@restaurant.com"),
-            Staff(name="Sarah Kim", role="waiter", email="sarah@restaurant.com"),
-            Staff(name="Mike Chen", role="cashier", email="mike@restaurant.com"),
+            Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
+            Staff(name="Jane Opondo", role="Chef", email="jane@restaurant.com"),
+            Staff(name="Ben O Teke", role="Manager", email="bob@restaurant.com"),
         ]
         db.session.add_all(staff)
         
