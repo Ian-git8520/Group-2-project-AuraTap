@@ -79,7 +79,7 @@ def seed_database():
         
         # Create staff
         staff = [
-            Staff(name="John Doe", role="Waiter", email="john@restaurant.com"),
+            Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
             Staff(name="Jane Smith", role="Chef", email="jane@restaurant.com"),
             Staff(name="Bob Manager", role="Manager", email="bob@restaurant.com"),
         ]
