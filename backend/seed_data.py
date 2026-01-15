@@ -78,7 +78,7 @@ def seed_database():
         ]
         db.session.add_all(menu_items)
         
-        # Create staff
+        
         staff = [
             Staff(name="Jacob Jele", role="Waiter", email="jacob@restaurant.com"),
             Staff(name="Jane Opondo", role="Chef", email="jane@restaurant.com"),
