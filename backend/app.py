@@ -8,12 +8,12 @@ from flask import send_from_directory
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+
 load_dotenv()
 
 app = Flask(__name__)
 
-# Configuration
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///restaurant.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
@@ -27,7 +27,7 @@ CORS(app, origins=os.getenv('CORS_ORIGINS', '*').split(','))
 
 
 
-# models
+
 
 class Customer(db.Model):
     __tablename__ = 'customers'
